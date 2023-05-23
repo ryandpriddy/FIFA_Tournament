@@ -1,0 +1,862 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?scenebuilder-stylesheet ../material-fx-vo_3.css?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" styleClass="gradient-color" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ucdenver.app.AdminController">
+   <left>
+      <VBox prefHeight="714.0" prefWidth="264.0" stylesheets="@manualColors.css" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="229.0" prefWidth="267.0" styleClass="gradient-color">
+               <children>
+                  <ImageView fx:id="btnBackgroundPn" fitHeight="176.0" fitWidth="148.0" onMouseClicked="#homeBackground" pickOnBounds="true" preserveRatio="true" styleClass="gradient-color">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@logo_whiteText_noBackground.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="280.0" prefWidth="276.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="276.0">
+                     <children>
+                        <Button fx:id="btnTournamentPn" mnemonicParsing="false" onAction="#tabSwitch" prefHeight="85.0" prefWidth="302.0" text="TOURNAMENT">
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@trophy_icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="BOTTOM_LEFT" prefHeight="52.0" prefWidth="276.0">
+                     <children>
+                        <Button fx:id="btnCountryPn" mnemonicParsing="false" onAction="#tabSwitch" prefHeight="62.0" prefWidth="276.0" text="COUNTRY">
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@world_icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="52.0" prefWidth="276.0">
+                     <children>
+                        <Button fx:id="btnRefereePn" mnemonicParsing="false" onAction="#tabSwitch" prefHeight="58.0" prefWidth="276.0" text="REFEREES">
+                           <styleClass>
+                              <String fx:value="button" />
+                              <String fx:value="button-flat" />
+                           </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@whistle_Icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="BASELINE_LEFT" prefHeight="52.0" prefWidth="276.0">
+                     <children>
+                        <Button fx:id="btnTeamsPn" mnemonicParsing="false" onAction="#tabSwitch" prefHeight="258.0" prefWidth="407.0" text="TEAMS">
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@team_icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="52.0" prefWidth="276.0">
+                     <children>
+                        <Button fx:id="btnPlayerPn" mnemonicParsing="false" onAction="#tabSwitch" prefHeight="202.0" prefWidth="338.0" text="PLAYERS">
+                           <styleClass>
+                              <String fx:value="button" />
+                              <String fx:value="button-flat" />
+                           </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@player_icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="52.0" prefWidth="276.0">
+                     <children>
+                        <Button fx:id="btnMatchesPn" mnemonicParsing="false" onAction="#tabSwitch" prefHeight="187.0" prefWidth="396.0" text="MATCHES">
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@soccer_icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="0.0" prefWidth="276.0">
+                     <children>
+
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <styleClass>
+            <String fx:value="primary-color" />
+            <String fx:value="gradient-color" />
+         </styleClass>
+      </VBox>
+   </left>
+   <center>
+      <StackPane prefHeight="150.0" prefWidth="200.0" styleClass="secondary-color" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane fx:id="apnBackground" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #21252b;" styleClass="secondary-color" stylesheets="@manualColors.css">
+               <children>
+                  <GridPane layoutX="86.0" layoutY="214.0" prefHeight="351.0" prefWidth="514.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="143.19998779296876" minHeight="10.0" prefHeight="105.59998168945313" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="304.800048828125" minHeight="10.0" prefHeight="49.79999999999998" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="196.2" minHeight="10.0" prefHeight="196.2" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label text="WELCOME" GridPane.halignment="CENTER">
+                           <font>
+                              <Font name="Yu Gothic Light" size="92.0" />
+                           </font>
+                        </Label>
+                        <Label text="Select a tab to begin" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                        <Label text="TO THE FIFA WORLD CUP 2022" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Yu Gothic Light" size="23.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="apnTournament" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #21252b;" styleClass="secondary-color" stylesheets="@manualColors.css">
+               <children>
+                  <AnchorPane layoutX="2.0" layoutY="3.0" prefHeight="714.0" prefWidth="802.0">
+                     <children>
+                        <Label layoutX="118.0" layoutY="126.0" text="Enter New Tournament Name: " />
+                        <TextField layoutX="318.0" layoutY="118.0" />
+                        <Button layoutX="496.0" layoutY="116.0" mnemonicParsing="false" text="Create New" />
+                        <Label layoutX="222.0" layoutY="26.0" prefHeight="57.0" prefWidth="357.0" text="Create New Tournament">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="232.0" layoutY="209.0" prefHeight="58.0" prefWidth="360.0" text="Select Active Tournament">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <ComboBox layoutX="223.0" layoutY="295.0" prefHeight="61.0" prefWidth="356.0" />
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+            <AnchorPane fx:id="apnCountry" prefHeight="200.0" prefWidth="200.0" styleClass="secondary-color" stylesheets="@manualColors.css">
+               <children>
+                  <GridPane layoutX="14.0" layoutY="13.0" prefHeight="693.0" prefWidth="745.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="254.20001220703125" minWidth="10.0" prefWidth="191.80003662109374" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="559.7999755859375" minWidth="10.0" prefWidth="508.59996337890624" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="342.20001220703125" minWidth="10.0" prefWidth="55.20006103515618" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="227.79999389648438" minHeight="0.5999950408935604" prefHeight="61.6" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="466.2000049591064" minHeight="0.0" prefHeight="79.19998931884766" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="466.2000049591064" minHeight="10.0" prefHeight="73.59999389648436" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="592.8" minHeight="10.0" prefHeight="438.4000061035156" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="592.8" minHeight="10.0" prefHeight="87.80001220703127" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="83.0" prefWidth="190.0" text="Enter a Country" textAlignment="CENTER" GridPane.halignment="CENTER">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="txtCountryName" alignment="CENTER" prefHeight="42.0" prefWidth="339.0" promptText="Enter new Country name" GridPane.columnIndex="1" />
+                        <Button fx:id="btnAddCountry" mnemonicParsing="false" onAction="#addCountry" text="Register Country" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Label alignment="CENTER_RIGHT" prefHeight="67.0" prefWidth="352.0" text="Registered Countries" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                        </Label>
+                        <ListView fx:id="lstRegisteredCountries" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" />
+                           </GridPane.margin>
+                        </ListView>
+                        <ComboBox fx:id="cbxDelCountry" prefHeight="30.0" prefWidth="292.0" promptText="Select Country" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Button fx:id="btnDeleteCountry" mnemonicParsing="false" onAction="#deleteCountry" prefHeight="38.0" prefWidth="87.0" text="Delete " GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="80.0" />
+                           </GridPane.margin>
+                        </Button>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         <AnchorPane fx:id="apnRefereeMatch" prefHeight="200.0" prefWidth="200.0" styleClass="overlay" stylesheets="@material-fx-v0_3.css">
+         <children>
+            <AnchorPane layoutX="22.0" layoutY="107.0" prefHeight="506.0" prefWidth="646.0" styleClass="overlay-block" stylesheets="@material-fx-v0_3.css">
+               <children>
+                  <AnchorPane layoutX="-7.0" layoutY="14.0" prefHeight="495.0" prefWidth="768.0">
+                     <children>
+                        <GridPane layoutX="14.0" layoutY="32.0" prefHeight="452.0" prefWidth="738.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="258.79998779296875" minWidth="10.0" prefWidth="201.2000274658203" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="308.40000915527344" minWidth="10.0" prefWidth="254.3999755859375" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="361.20001220703125" minWidth="10.0" prefWidth="224.4000244140625" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label alignment="CENTER" prefHeight="48.0" prefWidth="380.0" text="Referee 2:" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="48.0" prefWidth="380.0" text="Referee 1:" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="67.0" prefWidth="370.0" text="Referee 3:" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="52.0" prefWidth="375.0" text="Referee 4:" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="txtMatchRef1" alignment="CENTER" prefHeight="48.0" prefWidth="254.0" text="Referee Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="txtMatchRef2" alignment="CENTER" prefHeight="48.0" prefWidth="254.0" text="Referee Name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label fx:id="txtMatchRef3" alignment="CENTER" prefHeight="48.0" prefWidth="254.0" text="Referee Name" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label fx:id="txtMatchRef4" alignment="CENTER" prefHeight="48.0" prefWidth="254.0" text="Referee Name" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label fx:id="txtMatchRefC1" alignment="CENTER" prefHeight="48.0" prefWidth="254.0" text="Country" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label fx:id="txtMatchRefC2" alignment="CENTER" prefHeight="48.0" prefWidth="254.0" text="Country" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label fx:id="txtMatchRefC3" alignment="CENTER" prefHeight="48.0" prefWidth="254.0" text="Country" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Label fx:id="txtMatchRefC4" alignment="CENTER" prefHeight="48.0" prefWidth="254.0" text="Country" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <ComboBox fx:id="cbxRefsForMatchDel" prefHeight="41.0" prefWidth="257.0" promptText="Select A Referee" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Button fx:id="btnDelRefFromMatch" mnemonicParsing="false" onAction="#delRefFromMatch" prefHeight="40.0" prefWidth="102.0" text="Delete" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                              <Button fx:id="btnAddRefToMatch" mnemonicParsing="false" onAction="#addRefereeToMatch" text="Add To Match" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                              <ComboBox fx:id="cbxRefsForMatchAdd" prefHeight="38.0" prefWidth="253.0" promptText="Select A Referee" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                              <ComboBox prefHeight="41.0" prefWidth="257.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="102.0" text="Delete" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                              <Button mnemonicParsing="false" text="Add To Match" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                              <ComboBox prefHeight="38.0" prefWidth="253.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                              <Label alignment="CENTER" prefHeight="38.0" prefWidth="277.0" text="Current Match Referees" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="20.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children></AnchorPane>
+                  <ImageView fx:id="btnCloseRefereeMatch" fitHeight="19.0" fitWidth="22.0" layoutX="729.0" layoutY="15.0" onMouseClicked="#exitSubMenu" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@close_icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+         </AnchorPane>
+            <AnchorPane fx:id="apnNewMatch" prefHeight="200.0" prefWidth="200.0" styleClass="overlay" stylesheets="@material-fx-v0_3.css">
+               <children>
+                  <AnchorPane layoutX="22.0" layoutY="109.0" prefHeight="506.0" prefWidth="646.0" styleClass="overlay-block" stylesheets="@material-fx-v0_3.css">
+                     <children>
+                        <AnchorPane layoutX="717.0" layoutY="10.0" prefHeight="30.0" prefWidth="42.0" />
+                        <ImageView fx:id="btnCloseNewMatch" fitHeight="19.0" fitWidth="22.0" layoutX="729.0" layoutY="15.0" onMouseClicked="#exitSubMenu" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@close_icon.png" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="157.0" layoutY="1.0" prefHeight="513.0" prefWidth="571.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="64.0" prefWidth="571.0">
+                                 <children>
+                                    <Label alignment="CENTER" text="Create New Match">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="51.0" prefWidth="571.0">
+                                 <children>
+                                    <HBox prefHeight="51.0" prefWidth="78.0" />
+                                    <Label alignment="BASELINE_RIGHT" prefHeight="74.0" prefWidth="170.0" text="Team A Name">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="cbxNewMatchTeamAName" prefHeight="41.0" prefWidth="203.0">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </ComboBox>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="52.0" prefWidth="571.0">
+                                 <children>
+                                    <HBox prefHeight="51.0" prefWidth="78.0" />
+                                    <Label alignment="BASELINE_RIGHT" prefHeight="74.0" prefWidth="170.0" text="Team B Name">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="cbxNewMatchTeamBName" prefHeight="42.0" prefWidth="202.0">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </ComboBox>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="35.0" prefWidth="571.0">
+                                 <children>
+                                    <HBox prefHeight="47.0" prefWidth="90.0" />
+                                    <Label alignment="BASELINE_RIGHT" prefHeight="47.0" prefWidth="158.0" text="Start Date">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <DatePicker fx:id="dtpNewMatchStartDate" prefHeight="50.0" prefWidth="204.0">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </DatePicker>
+                                 </children>
+                              </HBox>
+                              <AnchorPane prefHeight="62.0" prefWidth="571.0">
+                                 <children>
+                                    <Label layoutX="163.0" prefHeight="55.0" prefWidth="89.0" text="Start Time">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ChoiceBox fx:id="cbxNewMatchHr" layoutX="259.0" layoutY="16.0" prefHeight="44.0" prefWidth="74.0" />
+                                    <ChoiceBox fx:id="cbxNewMatchMin" layoutX="349.0" layoutY="15.0" prefHeight="44.0" prefWidth="68.0" />
+                                    <ChoiceBox fx:id="cbxNewMatchSec" layoutX="431.0" layoutY="15.0" prefHeight="44.0" prefWidth="66.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="106.0" layoutY="13.0" prefHeight="38.0" prefWidth="138.0" text="Select a Referee">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="btnAddNewMatch" layoutX="14.0" layoutY="146.0" mnemonicParsing="false" onAction="#addNewMatch" text="Add Match" />
+                                    <Button layoutX="473.0" layoutY="15.0" mnemonicParsing="false" onAction="#addNewMatchReferee" text="Add Referees" />
+                                    <ListView fx:id="lstNewMatchReferees" layoutX="154.0" layoutY="62.0" prefHeight="168.0" prefWidth="365.0" />
+                                    <ComboBox fx:id="cbxNewMatchReferees" layoutX="259.0" layoutY="14.0" prefHeight="41.0" prefWidth="206.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                        <AnchorPane layoutX="33.0" layoutY="34.0" prefHeight="210.0" prefWidth="199.0" styleClass="gradient-center" stylesheets="@material-fx-v0_3.css">
+                           <children>
+                              <ImageView fitHeight="201.0" fitWidth="208.0" layoutX="1.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@soccerBall.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="apnMatches" prefHeight="720.0" prefWidth="934.0" styleClass="secondary-color" stylesheets="@manualColors.css">
+               <children>
+                  <HBox layoutX="222.0" prefHeight="59.0" prefWidth="351.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="71.0" prefWidth="383.0" text="Match Manager">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutY="59.0" prefHeight="0.0" prefWidth="806.0">
+                     <children>
+                        <Label prefHeight="60.0" prefWidth="217.0" text="Select a Match: " textAlignment="JUSTIFY">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="cbxSelectMatch" onAction="#onMatchSelect" prefHeight="36.0" prefWidth="342.0" style="-fx-text-fill: #FFFFFF;" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin></ComboBox>
+                        <HBox alignment="CENTER" prefHeight="41.0" prefWidth="153.0" />
+                        <Button fx:id="btnCreateNewMatch" mnemonicParsing="false" onAction="#tabSwitch" onMouseClicked="#onNewMatchSelect" prefHeight="43.0" prefWidth="238.0" text="Create New Match">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="8.0" layoutY="144.0" prefHeight="51.0" prefWidth="790.0">
+                     <children>
+                        <Label fx:id="lblTeamAScore" alignment="CENTER_RIGHT" prefHeight="59.0" prefWidth="225.0" text="Team A Name:" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="txtTeamAScore" alignment="CENTER" prefHeight="21.0" prefWidth="38.0">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin></TextField>
+                        <Label fx:id="lblTeamBScore" alignment="BASELINE_RIGHT" prefHeight="43.0" prefWidth="258.0" text="Team B Name" textAlignment="RIGHT" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="txtTeamBScore" alignment="CENTER" prefHeight="21.0" prefWidth="30.0">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin></TextField>
+                        <VBox alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="171.0">
+                           <children>
+                              <Button fx:id="btnRecordScore" mnemonicParsing="false" onAction="#recordMatchScore" prefHeight="40.0" prefWidth="114.0" text="Update Score" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <VBox alignment="CENTER" layoutY="108.0" prefHeight="47.0" prefWidth="806.0">
+                     <children>
+                        <Label alignment="BOTTOM_CENTER" text="SCORE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <HBox layoutY="286.0" prefHeight="418.0" prefWidth="806.0">
+                     <children>
+                        <VBox prefHeight="418.0" prefWidth="403.0">
+                           <children>
+                              <HBox prefHeight="50.0" prefWidth="403.0">
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" />
+                                    <Label fx:id="lblTeamALineUp" alignment="CENTER" prefHeight="63.0" prefWidth="571.0" text="Team A" HBox.hgrow="ALWAYS" />
+                                    <HBox prefHeight="100.0" prefWidth="200.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="54.0" prefWidth="403.0">
+                                 <children>
+                                    <ComboBox fx:id="cbxTeamAPlayers" prefWidth="150.0" promptText="Select Player:">
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin></ComboBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="11.0" prefWidth="134.0">
+                                       <children>
+                                          <ImageView fx:id="btnAddPlayerToLineUpA" fitHeight="27.0" fitWidth="27.0" onMouseClicked="#addPlayerToLineupA" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@plus_icon.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <ImageView fx:id="btnRemovePlayerFromLUA" fitHeight="32.0" fitWidth="46.0" onMouseClicked="#removePlayerFromLUA" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@minus_icon.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                              <ListView fx:id="lstTeamAPlayers" prefHeight="370.0" prefWidth="364.0" style="-fx-background-color: grey;">
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin></ListView>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" />
+                        <VBox prefHeight="418.0" prefWidth="403.0">
+                           <children>
+                              <HBox prefHeight="50.0" prefWidth="403.0">
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" />
+                                    <Label fx:id="lblTeamBLineUp" alignment="CENTER" prefHeight="42.0" prefWidth="594.0" text="Team B" HBox.hgrow="ALWAYS" />
+                                    <HBox prefHeight="100.0" prefWidth="200.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="54.0" prefWidth="403.0">
+                                 <children>
+                                    <ComboBox fx:id="cbxTeamBPlayers" prefWidth="150.0" promptText="Select Player:">
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding></ComboBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="11.0" prefWidth="134.0">
+                                       <children>
+                                          <ImageView fx:id="btnAddPlayerToLineUpB" fitHeight="32.0" fitWidth="46.0" onMouseClicked="#addPlayerToLineUpB" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@plus_icon.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <ImageView fx:id="btnRemovePlayerFromLUB" fitHeight="32.0" fitWidth="46.0" onMouseClicked="#removePlayerFromLUB" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@minus_icon.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                              <ListView fx:id="lstTeamBPlayers" prefHeight="364.0" prefWidth="339.0" style="-fx-background-color: grey;" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="8.0" layoutY="215.0" prefHeight="51.0" prefWidth="790.0">
+                     <children>
+                        <Button fx:id="btnRefereeMatch" mnemonicParsing="false" onAction="#tabSwitch" prefHeight="42.0" prefWidth="178.0" text="Match Referees" />
+                     </children>
+                  </HBox>
+               </children>
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin></AnchorPane>
+            <AnchorPane fx:id="apnPlayers" prefHeight="200.0" prefWidth="200.0" styleClass="secondary-color" stylesheets="@manualColors.css">
+               <children>
+                  <GridPane alignment="CENTER" layoutX="24.0" layoutY="231.0" prefHeight="374.0" prefWidth="710.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="389.20001220703125" minWidth="10.0" prefWidth="262.19996337890626" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="555.6000366210938" minWidth="10.0" prefWidth="471.8000366210937" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="69.79998168945313" minHeight="10.0" prefHeight="64.99999389648438" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="35.79998779296875" minHeight="2.6000183105468864" prefHeight="26.199981689453125" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="51.79999389648438" minHeight="8.600012207031256" prefHeight="51.79999389648438" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="63.000036621093756" minHeight="10.0" prefHeight="32.800006103515614" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="46.39999999999998" minHeight="10.0" prefHeight="46.39999999999998" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="26.800024414062477" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" text="Player Information">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label text="Full Name" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Date of Birth" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="Height (cms)" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="Weight (kgs)" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="34.0" prefWidth="250.0" text="Team Name" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtPlayerName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <DatePicker fx:id="dtpPlayerDOB" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtPlayerHeight" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtPlayerWeight" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <ComboBox fx:id="cbxTeamName" prefHeight="34.0" prefWidth="242.0" GridPane.columnIndex="1" GridPane.rowIndex="5" HBox.hgrow="ALWAYS">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </ComboBox>
+                        <Button fx:id="btnAddPlayer" alignment="CENTER" mnemonicParsing="false" onAction="#addPlayer" prefHeight="43.0" prefWidth="156.0" text="Register New Player" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets left="80.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="btnDeletePlayer" mnemonicParsing="false" onAction="#deletePlayer" text="Delete Player" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </Button>
+                     </children>
+                  </GridPane>
+                  <GridPane layoutX="9.0" layoutY="30.0" prefHeight="182.0" prefWidth="578.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" text="Player Registration" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="300.0" />
+                           </GridPane.margin>
+                        </Label>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="apnReferees" prefHeight="200.0" prefWidth="200.0" styleClass="secondary-color" stylesheets="@manualColors.css">
+               <children>
+                  <VBox alignment="TOP_CENTER" layoutX="45.0" prefHeight="720.0" prefWidth="719.0">
+                     <children>
+                        <Label text="Register New Referee">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <GridPane prefHeight="204.0" prefWidth="602.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="344.79998779296875" minWidth="10.0" prefWidth="246.4000244140625" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="278.39996337890625" minWidth="10.0" prefWidth="249.5999755859375" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="171.4" minHeight="10.0" prefHeight="146.19998168945312" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="129.79999389648438" minHeight="10.0" prefHeight="123.80001831054688" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="129.79999389648438" minHeight="10.0" prefHeight="123.80001831054688" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label contentDisplay="CENTER" prefHeight="35.0" prefWidth="198.0" text="Select the Country" GridPane.halignment="CENTER">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label contentDisplay="CENTER" prefHeight="35.0" prefWidth="281.0" text="Enter in the Referee Name" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtRefereePrint" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Button fx:id="btnAddReferee" mnemonicParsing="false" onAction="#addReferee" text="Add Referee" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                              <ComboBox fx:id="selCountryForReferees" prefHeight="42.0" prefWidth="249.0" GridPane.columnIndex="1" />
+                           </children>
+                        </GridPane>
+                        <Label text="Registered Referees">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <HBox prefHeight="378.0" prefWidth="719.0">
+                           <children>
+                              <HBox prefHeight="96.0" prefWidth="116.0" />
+                              <ListView fx:id="lstRegReferees" prefHeight="298.0" prefWidth="494.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="apnTeams" prefHeight="200.0" prefWidth="200.0" styleClass="secondary-color" stylesheets="@manualColors.css">
+               <children>
+                  <GridPane layoutX="146.0" layoutY="27.0" prefHeight="158.0" prefWidth="540.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="344.79998779296875" minWidth="10.0" prefWidth="246.4000244140625" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="278.39996337890625" minWidth="10.0" prefWidth="249.5999755859375" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="171.4" minHeight="10.0" prefHeight="81.19999542236329" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="129.79999389648438" minHeight="0.0" prefHeight="77.20000457763672" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label contentDisplay="CENTER" prefHeight="35.0" prefWidth="198.0" text="Select the Country" GridPane.halignment="CENTER">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnAddTeam" mnemonicParsing="false" onAction="#addTeam" text="Add Team" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="selCountryForTeam" prefHeight="42.0" prefWidth="249.0" GridPane.columnIndex="1" />
+                     </children>
+                  </GridPane>
+                  <ListView fx:id="lstRegTeams" layoutX="173.0" layoutY="244.0" prefHeight="376.0" prefWidth="536.0" />
+                  <Label layoutX="354.0" layoutY="208.0" text="Registered Teams">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="cbxDeleteTeam" layoutX="214.0" layoutY="648.0" prefHeight="39.0" prefWidth="254.0" />
+                  <Button fx:id="btnDeleteTeam" layoutX="569.0" layoutY="649.0" mnemonicParsing="false" onAction="#deleteTeam" text="Delete Team" />
+               </children>
+            </AnchorPane>
+         <AnchorPane fx:id="apnRefereeMatch" prefHeight="200.0" prefWidth="200.0" styleClass="overlay" stylesheets="@material-fx-v0_3.css">
+         <children>
+            <AnchorPane layoutX="22.0" layoutY="107.0" prefHeight="506.0" prefWidth="646.0" styleClass="overlay-block" stylesheets="@material-fx-v0_3.css">
+               <children>
+                  <AnchorPane layoutX="-7.0" layoutY="14.0" prefHeight="495.0" prefWidth="768.0">
+                     <children>
+                        <GridPane layoutX="14.0" layoutY="32.0" prefHeight="452.0" prefWidth="738.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="258.79998779296875" minWidth="10.0" prefWidth="201.2000274658203" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="308.40000915527344" minWidth="10.0" prefWidth="254.3999755859375" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="361.20001220703125" minWidth="10.0" prefWidth="224.4000244140625" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label alignment="CENTER" prefHeight="48.0" prefWidth="380.0" text="Referee 2:" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="48.0" prefWidth="380.0" text="Referee 1:" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="67.0" prefWidth="370.0" text="Referee 3:" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="52.0" prefWidth="375.0" text="Referee 4:" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="txtMatchRef1" alignment="CENTER" prefHeight="48.0" prefWidth="254.0" text="Referee Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="txtMatchRef2" alignment="CENTER" prefHeight="48.0" prefWidth="254.0" text="Referee Name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label fx:id="txtMatchRef3" alignment="CENTER" prefHeight="48.0" prefWidth="254.0" text="Referee Name" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label fx:id="txtMatchRef4" alignment="CENTER" prefHeight="48.0" prefWidth="254.0" text="Referee Name" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label fx:id="txtMatchRefC1" alignment="CENTER" prefHeight="48.0" prefWidth="254.0" text="Country" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label fx:id="txtMatchRefC2" alignment="CENTER" prefHeight="48.0" prefWidth="254.0" text="Country" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label fx:id="txtMatchRefC3" alignment="CENTER" prefHeight="48.0" prefWidth="254.0" text="Country" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Label fx:id="txtMatchRefC4" alignment="CENTER" prefHeight="48.0" prefWidth="254.0" text="Country" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <ComboBox fx:id="cbxRefsForMatchDel" prefHeight="41.0" prefWidth="257.0" promptText="Select A Referee" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Button fx:id="btnDelRefFromMatch" mnemonicParsing="false" onAction="#delRefFromMatch" prefHeight="40.0" prefWidth="102.0" text="Delete" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                              <Button fx:id="btnAddRefToMatch" mnemonicParsing="false" onAction="#addRefereeToMatch" text="Add To Match" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                              <ComboBox fx:id="cbxRefsForMatchAdd" prefHeight="38.0" prefWidth="253.0" promptText="Select A Referee" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                              <Button fx:id="btnDelRefereeFromMatch" mnemonicParsing="false" onAction="#delRefFromMatch" prefHeight="40.0" prefWidth="102.0" text="Delete" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                              <Button fx:id="btnAddRefereeToMatch" mnemonicParsing="false" onAction="#addRefereeToMatch" text="Add To Match" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                              <Label alignment="CENTER" prefHeight="38.0" prefWidth="277.0" text="Current Match Referees" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="20.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children></AnchorPane>
+                  <ImageView fx:id="btnCloseRefereeMatch" fitHeight="19.0" fitWidth="22.0" layoutX="729.0" layoutY="15.0" onMouseClicked="#exitSubMenu" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@close_icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+         </AnchorPane>
+         </children>
+      </StackPane>
+   </center>
+   <stylesheets>
+      <URL value="@manualColors.css" />
+      <URL value="@material-fx-v0_3.css" />
+   </stylesheets>
+</BorderPane>

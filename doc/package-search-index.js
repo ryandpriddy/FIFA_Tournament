@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"edu.ucdenver.pa1","l":"edu.ucdenver.app"},{"m":"edu.ucdenver.pa1","l":"edu.ucdenver.server"},{"m":"edu.ucdenver.pa1","l":"edu.ucdenver.tournament"}];updateSearchResults();

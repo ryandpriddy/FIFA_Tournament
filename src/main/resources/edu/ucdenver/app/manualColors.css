@@ -1,0 +1,73 @@
+
+.primary-color {
+    -fx-background-color: #282c23;
+
+}
+
+.secondary-color {
+    -fx-background-color: #21252b;
+}
+
+.secondary-color-public {
+    -fx-background-color: -oneDark-active;
+}
+
+.gradient-color {
+    -fx-background-color: linear-gradient(to right, rgb(163,12,53), #21252b);
+}
+
+.gradient-color-public {
+    -fx-background-color: linear-gradient(to left, rgb(163,12,53), -oneDark-active);
+}
+
+.root {
+    /* ONE DARK THEME COLORS*/
+	-oneDark-Background: #21252b;
+    -oneDark-Foreground: #979FAD;
+    -oneDark-Text: #979FAD;
+    -oneDark-Selection-Background: #4D515D;
+    -oneDark-Selection-Foreground: #FFFFFF;
+    -oneDark-Buttons: #3A3F4B;
+    -oneDark-Second-Background: #2F333D;
+    -oneDark-Disabled: #6B727D;
+    -oneDark-Contrast: #21252B;
+    -oneDark-Active: #383E49;
+    -oneDark-Border: #282C34;
+    -oneDark-Highlight: #383D48;
+    -oneDark-Tree: #3A3F4B80;
+    -oneDark-Notifications: #282C34;
+    -oneDark-Accent-Color: #2979ff;
+    -oneDark-Excluded-Files-Color: #3c4150;
+
+    -oneDark-Green-Color: #98c379;
+    -oneDark-Yellow-Color: #e5c17c;
+    -oneDark-Blue-Color: #61aeef;
+    -oneDark-Red-Color: #e06c75;
+    -oneDark-Purple-Color: #c679dd;
+    -oneDark-Orange-Color: #d19a66;
+    -oneDark-Cyan-Color: #57b6c2;
+    -oneDark-Gray-Color: #59626f;
+    -oneDark-White-Black-Color: #abb2bf;
+    -oneDark-Error-Color: #e06c75;
+
+    -oneDark-transparent-selected50 : rgba(77,81,91,.5);
+    -oneDark-transparent-selected70 : rgba(77,81,91,.7);
+    -oneDark-transparent-selected30 : rgba(77,81,91,.3);
+    -oneDark-transparent-selected90 : rgba(77,81,91,.9);
+    -oneDark-transparent-selected10 : rgba(77,81,91,.1);
+
+    -worldCup-gradient: linear-gradient(to right, rgb(163,12,53), #21252b);
+}
+.icon {
+    -fx-fill: #bdbdbd;
+    -fx-pref-height: 42;
+    -fx-pref-width: 42;
+    -fx-min-height: 42;
+    -fx-min-width: 42;
+    -fx-padding: 0;
+    -fx-font-family: "FontAwesome";
+}
+
+.label {
+    -fx-text-fill: #bdbdbd
+}

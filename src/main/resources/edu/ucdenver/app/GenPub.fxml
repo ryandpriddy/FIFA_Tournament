@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?scenebuilder-stylesheet ../material-fx-vo_3.css?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" styleClass="gradient-color-public" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ucdenver.app.PublicController">
+    <right>
+        <VBox prefHeight="600.0" prefWidth="276.0" stylesheets="@manualColors.css" BorderPane.alignment="CENTER">
+            <children>
+                <VBox alignment="CENTER" prefHeight="229.0" prefWidth="276.0" styleClass="gradient-color-public">
+                    <children>
+                        <ImageView fitHeight="176.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true" styleClass="gradient-color-public">
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <image>
+                                <Image url="@logo_whiteText_noBackground.png" />
+                            </image>
+                        </ImageView>
+                  <Label text="INFORMATION APP">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                    </children>
+                </VBox>
+                <VBox alignment="TOP_CENTER" prefHeight="270.0" prefWidth="276.0">
+                    <children>
+                        <HBox alignment="CENTER" prefHeight="52.0" prefWidth="276.0">
+                            <children>
+                                <Button fx:id="btnWelcome" mnemonicParsing="false" onAction="#tabSwitch" prefHeight="74.0" prefWidth="300.0" text="WELCOME!" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="52.0" prefWidth="276.0">
+                            <children>
+                                <Button fx:id="btnUpcomingMatches" mnemonicParsing="false" onAction="#tabSwitch" prefHeight="62.0" prefWidth="276.0" text="UPCOMING MATCHES">
+                                    <graphic>
+                                        <ImageView fitHeight="26.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@soccer_icon.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="52.0" prefWidth="276.0">
+                            <children>
+                                <Button fx:id="btnDates" mnemonicParsing="false" onAction="#tabSwitch" prefHeight="258.0" prefWidth="407.0" text="DATE SEARCH">
+                                    <graphic>
+                                        <ImageView fitHeight="32.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@calendar2.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="52.0" prefWidth="276.0">
+                            <children>
+                                <Button fx:id="btnGamesOfTeam" mnemonicParsing="false" onAction="#tabSwitch" prefHeight="187.0" prefWidth="396.0" text="GAMES OF TEAM">
+                                    <graphic>
+                                        <ImageView fitHeight="30.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@team_icon.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="60.0" prefWidth="276.0">
+                            <children>
+                                <Button fx:id="btnLineups" mnemonicParsing="false" onAction="#tabSwitch" prefHeight="202.0" prefWidth="338.0" text="LINEUPS">
+                                    <styleClass>
+                                        <String fx:value="button" />
+                                        <String fx:value="button-flat" />
+                                    </styleClass>
+                                    <graphic>
+                                        <ImageView fitHeight="30.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@player_icon.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <HBox alignment="CENTER" prefHeight="103.0" prefWidth="276.0">
+                            <children>
+
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+            <styleClass>
+                <String fx:value="primary-color" />
+                <String fx:value="gradient-color-public" />
+            </styleClass>
+        </VBox>
+    </right>
+    <center>
+        <StackPane prefHeight="150.0" prefWidth="200.0" styleClass="secondary-color-public" BorderPane.alignment="CENTER">
+            <children>
+                <AnchorPane fx:id="apnUpcomingMatches" prefHeight="200.0" prefWidth="200.0" styleClass="secondary-color-public" stylesheets="@manualColors.css">
+                    <children>
+                        <ListView fx:id="listUpcomingMatches" layoutX="175.0" layoutY="152.0" prefHeight="453.0" prefWidth="496.0" style="-fx-background-color: grey;" />
+                        <VBox layoutX="323.0" layoutY="152.0" prefHeight="200.0" prefWidth="100.0" />
+                        <Label layoutX="288.0" layoutY="80.0" text="Match Schedule">
+                            <font>
+                                <Font name="System Bold" size="36.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="apnDates" prefHeight="200.0" prefWidth="200.0" styleClass="secondary-color-public" stylesheets="@manualColors.css">
+                    <children>
+                        <GridPane layoutX="54.0" layoutY="129.0" prefHeight="104.0" prefWidth="668.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="222.59995727539064" minWidth="10.0" prefWidth="222.59995727539064" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="272.8" minWidth="10.0" prefWidth="272.8" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="188.20001220703125" minWidth="10.0" prefWidth="104.79999999999995" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="183.79999389648438" minHeight="10.0" prefHeight="110.40000610351562" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label text="Choose Date" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                    <font>
+                                        <Font size="23.0" />
+                                    </font>
+                                </Label>
+                                <DatePicker fx:id="dtpGameSearch" prefHeight="47.0" prefWidth="278.0" GridPane.columnIndex="1" />
+                                <Button fx:id="btnSearchDate" mnemonicParsing="false" onAction="#searchDate" text="Search" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                            </children>
+                        </GridPane>
+                        <Label layoutX="46.0" layoutY="47.0" text="Search for Matches">
+                            <font>
+                                <Font name="System Bold" size="28.0" />
+                            </font>
+                        </Label>
+                        <ListView fx:id="listDateGames" layoutX="46.0" layoutY="368.0" prefHeight="299.0" prefWidth="711.0" style="-fx-background-color: grey;" />
+                        <Label layoutX="46.0" layoutY="294.0" text="Matches Found">
+                            <font>
+                                <Font name="System Bold" size="32.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="apnGamesOfTeam" prefHeight="200.0" prefWidth="200.0" styleClass="secondary-color-public" stylesheets="@manualColors.css">
+                    <children>
+                        <GridPane layoutX="46.0" layoutY="147.0" prefHeight="105.0" prefWidth="714.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="174.199951171875" minWidth="10.0" prefWidth="161.39996337890625" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="330.39997558593757" minWidth="10.0" prefWidth="305.599951171875" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="221.60004882812495" minWidth="10.0" prefWidth="221.60004882812495" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label text="Choose Team" GridPane.halignment="CENTER">
+                                    <font>
+                                        <Font size="24.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="selTeamSearch" prefHeight="42.0" prefWidth="346.0" GridPane.columnIndex="1" />
+                                <Button fx:id="btnSearchTeams" mnemonicParsing="false" onAction="#searchTeam" text="Search" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                            </children>
+                        </GridPane>
+                        <Label layoutX="43.0" layoutY="53.0" text="Search Matches of Teams">
+                            <font>
+                                <Font name="System Bold" size="29.0" />
+                            </font>
+                        </Label>
+                        <ListView fx:id="listTeamGames" layoutX="43.0" layoutY="369.0" prefHeight="285.0" prefWidth="718.0" style="-fx-background-color: grey;" />
+                        <Label layoutX="43.0" layoutY="303.0" text="Matches Found">
+                            <font>
+                                <Font name="System Bold" size="30.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="apnLineups" prefHeight="200.0" prefWidth="200.0" styleClass="secondary-color-public" stylesheets="@manualColors.css">
+                    <children>
+                        <GridPane layoutX="78.0" layoutY="38.0" prefHeight="210.0" prefWidth="647.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label text="Search Lineup of Match" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                    <font>
+                                        <Font name="System Bold" size="28.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="selMatch" prefHeight="42.0" prefWidth="644.0" GridPane.rowIndex="1" />
+                                <Button fx:id="btnSearchMatch" mnemonicParsing="false" onAction="#searchMatch" text="Search" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                            </children>
+                        </GridPane>
+                        <GridPane layoutX="12.0" layoutY="260.0" prefHeight="414.0" prefWidth="780.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="387.19996337890626" minWidth="10.0" prefWidth="383.0000244140625" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="182.5999755859375" minWidth="0.0" prefWidth="13.399975585937511" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.2000122070312" minWidth="10.0" prefWidth="383.6000366210937" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="113.200048828125" minHeight="10.0" prefHeight="36.000024414062494" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="113.200048828125" minHeight="10.0" prefHeight="41.60001220703124" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="152.39996948242188" minHeight="9.999969482421875" prefHeight="48.79998779296875" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="288.8" minHeight="10.0" prefHeight="288.8" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <ListView fx:id="listLineupA" prefHeight="182.0" prefWidth="177.0" style="-fx-background-color: grey;" GridPane.rowIndex="3" />
+                                <ListView fx:id="listLineupB" prefHeight="370.0" prefWidth="323.0" style="-fx-background-color: grey;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                <ListView fx:id="listTeamA" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.rowIndex="1" />
+                                <ListView fx:id="listTeamB" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                <Label text="Team A" GridPane.halignment="CENTER">
+                                    <font>
+                                        <Font name="System Bold" size="20.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Team B" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                                    <font>
+                                        <Font name="System Bold" size="20.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Lineup" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                                    <font>
+                                        <Font name="System Bold" size="20.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Lineup" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                                    <font>
+                                        <Font name="System Bold" size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </GridPane>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="apnWelcome" prefHeight="200.0" prefWidth="200.0" styleClass="secondary-color-public" stylesheets="@manualColors.css">
+                    <children>
+                        <Pane layoutX="302.0" layoutY="197.0" prefHeight="200.0" prefWidth="200.0" />
+                        <GridPane layoutX="72.0" layoutY="174.0" prefHeight="418.0" prefWidth="659.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="143.19998779296876" minHeight="10.0" prefHeight="130.3999816894531" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="304.800048828125" minHeight="10.0" prefHeight="74.60002441406252" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="243.2000244140625" minHeight="10.0" prefHeight="212.99997558593748" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label text="WELCOME" GridPane.halignment="CENTER">
+                                    <font>
+                                        <Font name="Yu Gothic Light" size="92.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Select a tab to begin" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                                    <font>
+                                        <Font size="25.0" />
+                                    </font>
+                                </Label>
+                                <Label text="TO THE FIFA WORLD CUP 2022" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                    <font>
+                                        <Font name="Yu Gothic Light" size="23.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </GridPane>
+                        <Label layoutX="14.0" layoutY="14.0" text="GENERAL PUBLIC">
+                            <font>
+                                <Font name="System Bold" size="19.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </children>
+        </StackPane>
+    </center>
+    <stylesheets>
+        <URL value="@manualColors.css" />
+        <URL value="@material-fx-v0_3.css" />
+    </stylesheets>
+</BorderPane>
