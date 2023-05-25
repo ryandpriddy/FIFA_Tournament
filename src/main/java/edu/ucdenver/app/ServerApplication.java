@@ -15,7 +15,6 @@ public class ServerApplication implements Serializable {
      * Constructor for ServerApplication
      */
     public ServerApplication(){
-        //changed this around a little so that we can initialize different tournament by changing the method call to TourTester
         tournament = TourTester.initTourLite();
 
         System.out.print(tournament);
